@@ -8,9 +8,4 @@ const [scoreText, score] = await Promise.all([
   Patches.outputs.getScalar('score'),
 ]);
 scoreText.text = score.toString();
-Diagnostics.log('start');
-const speed = score.pinLastValue();
-Diagnostics.log(`Last val: ${speed}Speed is: ${speed / 2}`);
-await Patches.inputs.setScalar('netSpeed', speed / 2);
-Diagnostics.log('end');
 })();
